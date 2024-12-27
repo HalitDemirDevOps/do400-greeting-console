@@ -22,5 +22,13 @@ pipeline{
         }
 
         // Add the Release stage here
+        stage('Release') {
+            steps {
+                sh '''
+                    oc project do400-greeting-console
+                    oc start-build greeting-console  --follow --wait
+                '''
+            }
+        }
     }
 }

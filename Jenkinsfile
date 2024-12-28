@@ -32,7 +32,7 @@ pipeline{
                 script {
                     sh '''
                         oc login --token=${OPENSHIFT_TOKEN} --server=${OPENSHIFT_SERVER}
-                        oc project greeting-console
+                        oc project jenkins
                         oc start-build greeting-console  --follow --wait
                     '''
                 }
